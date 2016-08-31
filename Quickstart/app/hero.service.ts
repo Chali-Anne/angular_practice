@@ -1,8 +1,10 @@
-﻿import { Injectable }       from '@angular/core';
-import { Headers, Http }    from '@angular/http';
+﻿import { Injectable }                 from '@angular/core';
+import { Headers, Http, Response }    from '@angular/http';
+import { Observable }                 from 'rxjs/Observable';
+
 import 'rxjs/add/operator/toPromise';
 
-import { Hero } from './hero';
+import { Hero }                       from './hero';
 
 @Injectable()
 export class HeroService {
@@ -11,7 +13,7 @@ export class HeroService {
 
     constructor(private http: Http) { }
 
-    private handleError(error: any): Promise<Any> {
+    private handleError(error: any): Promise<any> {
         console.error('Bad request : ', error);
         return Promise.reject(error.message || error);
     };
